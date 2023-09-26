@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego</title>
+  <style>
+    input{
+      text-align: center;
+    }
+    p{
+      background: #ffc6ef;
+      padding: 5px;
+      border: 1px solid;
+    }
+  </style>
+</head>
+
+<body style="display: flex;">
+  <div class="input-container" style="display: flex; flex-direction: column;">
+    <input type="text" id="input1">
+    <input type="text" id="input2">
+    <button id="button">Probar</button>
+  </div>
+  <div class="console" id="console" style="background-color: peachpuff; padding: 20px;"></div>
+  <script>
+    function disableInputs() {
+      document.getElementById("input1").disabled = true;
+      document.getElementById("input2").disabled = true;
+      document.getElementById("button").disabled = true;
+    }
+
+    function enableInputs() {
+      document.getElementById("input1").disabled = false;
+      document.getElementById("input2").disabled = false;
+      document.getElementById("button").disabled = false;
+    }
+
+    function showValues(data) {
+      document.getElementById("console").innerHTML += `<p>${JSON.stringify(data)}</p>`
+    }
+
+    function resetConsole() {
+      document.getElementById("console").innerHTML = '';
+    }
+
+
+    function startInput(main) {
+      document.getElementById("button").addEventListener('click', main);
+    }
+  </script>
+  <script src="js/onlyLogic.js"></script>
+</body>
+
+</html>
